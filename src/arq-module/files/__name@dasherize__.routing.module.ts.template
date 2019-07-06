@@ -1,0 +1,23 @@
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
+import { <%= classify(name) %>ListComponent } from './<%= name %>-list.component/<%= name %>-list.component';
+import { <%= classify(name) %>FormComponent } from './<%= name %>-form.component/<%= name %>-form.component';
+import { <%= classify(name) %>Resolver } from './<%= name %>.resolver';
+import { <%= classify(name) %>DeactivateGuard } from './<%= name %>.deactivate.guard';
+
+const <%= name %>_routes = [
+  { path: '', component: <%= classify(name) %>ListComponent }, 
+  { path: 'new', component: <%= classify(name) %>FormComponent }, 
+  { path: 'edit/:id', component: <%= classify(name) %>FormComponent, resolve: {any: <%= classify(name) %>Resolver}, canDeactivate: [<%= classify(name) %>DeactivateGuard] }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(<%= name %>_routes)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class <%= classify(name) %>RoutingModule {}

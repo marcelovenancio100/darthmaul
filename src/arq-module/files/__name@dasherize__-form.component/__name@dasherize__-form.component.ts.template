@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-<%= dasherize(name) %>-form',
+  templateUrl: './<%= dasherize(name) %>-form.component.html',
+  styleUrls: ['./<%= dasherize(name) %>-form.component.css']
+})
+export class <%= classify(name) %>FormComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

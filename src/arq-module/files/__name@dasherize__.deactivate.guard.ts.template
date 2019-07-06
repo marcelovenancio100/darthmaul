@@ -1,0 +1,15 @@
+import { Injectable } from '@angular/core';
+import { CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs';
+
+import { <%= classify(name) %>FormComponent } from './<%= name %>-form.component/<%= name %>-form.component';
+
+@Injectable()
+export class <%= classify(name) %>DeactivateGuard implements CanDeactivate<<%= classify(name) %>FormComponent> {
+
+    canDeactivate(component: <%= classify(name) %>FormComponent,
+                  route: ActivatedRouteSnapshot,
+                  state: RouterStateSnapshot): Observable<boolean> | boolean {
+        return true;
+    }
+}

@@ -1,0 +1,21 @@
+import { Injectable } from '@angular/core';
+import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Promise } from 'q';
+
+import { <%= classify(name) %>Service } from './<%= name %>.service';
+
+@Injectable()
+export class <%= classify(name) %>Resolver implements Resolve<any> {
+
+    constructor(private <%= name %>Service: <%= classify(name) %>Service) {}
+
+    resolve(
+        route: ActivatedRouteSnapshot,
+        state: RouterStateSnapshot
+    ): Observable<any> | Promise<any> | any {
+        let id = route.params['id'];
+        
+        //TO IMPLEMENT
+    }
+}

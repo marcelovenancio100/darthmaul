@@ -1,0 +1,15 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "arq-module": {
+      "description": "A new schematic module.",
+      "factory": "./arq-module/index#arqModule",
+      "schema": "./arq-module/schema.json"
+    },
+    "arq-auth": {
+      "description": "A new schematic auth.",
+      "factory": "./arq-auth/index#arqAuth",
+      "schema": "./arq-auth/schema.json"
+    }
+  }
+}

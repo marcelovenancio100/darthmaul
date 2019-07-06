@@ -1,0 +1,28 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
+
+import { <%= classify(name) %>ListComponent } from './<%= name %>-list.component/<%= name %>-list.component';
+import { <%= classify(name) %>FormComponent } from './<%= name %>-form.component/<%= name %>-form.component';
+import { <%= classify(name) %>Service } from './<%= name %>.service';
+import { <%= classify(name) %>RoutingModule } from './<%= name %>.routing.module';
+import { <%= classify(name) %>ActivateGuard } from './<%= name %>.activate.guard';
+import { <%= classify(name) %>DeactivateGuard } from './<%= name %>.deactivate.guard';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    <%= classify(name) %>RoutingModule
+  ],
+  declarations: [
+    <%= classify(name) %>ListComponent, 
+    <%= classify(name) %>FormComponent
+  ],
+  providers: [
+    <%= classify(name) %>Service,
+    <%= classify(name) %>ActivateGuard,
+    <%= classify(name) %>DeactivateGuard
+  ]
+})
+export class <%= classify(name) %>Module {}
